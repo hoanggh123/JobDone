@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+	<link rel="stylesheet" href="/templates/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/templates/css/style.css">
+	<link rel="stylesheet" href="/templates/css/responsive.css">
+	<title>Fresh Shop</title>
+	<link rel="stylesheet" href="/templates/css/custom.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style type="text/css">
+		.form-group {
+			margin-bottom: 20px;
+		}
+
+		#sortSelect {
+			width: 200px;
+		}
+	</style>
+</head>
+
+<body>
+	<header class="main-header">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+						aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+						<i class="fa fa-bars"></i>
+					</button>
+					<a class="navbar-brand" href="index.html"><img src="/templates/images/logo.png" class="logo"
+							alt=""></a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-menu">
+					<ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+						<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+						<li class="nav-item"><a class="nav-link" href="shop.html">Shop</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="nav-link dropdown-toggle arrow">Language</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item">
+									<img class="flag-icon img-fluid me-2" style="width:20px; height:20px"
+										src="../images/us-flag.png" alt="US Flag">
+									English
+								</a>
+								<a class="dropdown-item">
+									<img class="flag-icon img-fluid" src="../images/vn-flag.png"
+										style="width:20px; height:20px" alt="Vietnamese Flag">
+									Tiếng Việt
+								</a>
+							</div>
+						</li>
+
+						<li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
+
+						<li class="dropdown">
+							<a class="nav-link dropdown-toggle arrow" href="#"><i
+									class="fa-sharp fa-solid fa-users"></i></a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="login.html">Login</a>
+								<a class="dropdown-item" href="register.html">Register</a>
+							</div>
+						</li>
+
+						<li class="dropdown">
+							<a href="#" class="nav-link dropdown-toggle arrow">
+								<span>Greeting, </span><span></span>
+							</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="profile.html">Profile</a>
+								<a class="dropdown-item" href="checkout.html">Checkout</a>
+								<a class="dropdown-item" href="">History</a>
+								<a class="dropdown-item" href="">Logout</a>
+							</div>
+						</li>
+						<a href="cart.html" class="nav-link">
+							<i class="fa fa-shopping-bag" style="font-size:20px;"></i>
+							<span class="badge" style="position:relative; top:-10px; color:red; font-size:14px;"
+								id="itemInCart"></span>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div class="side">
+				<a href="#" class="close-side"><i class="fa fa-times"></i></a>
+				<li class="cart-box">
+					<ul class="cart-list">
+						<li>
+							<a href="#" class="photo">
+								<img src="../images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+							<h6><a href="#">Delica omtantur</a></h6>
+							<p>1x - <span class="price">$80.00</span></p>
+						</li>
+						<li>
+							<a href="#" class="photo"><img src="../images/img-pro-02.jpg" class="cart-thumb"
+									alt="" /></a>
+							<h6><a href="#">Omnes ocurreret</a></h6>
+							<p>1x - <span class="price">$60.00</span></p>
+						</li>
+						<li>
+							<a href="#" class="photo"><img src="../images/img-pro-03.jpg" class="cart-thumb"
+									alt="" /></a>
+							<h6><a href="#">Agam facilisis</a></h6>
+							<p>1x - <span class="price">$40.00</span></p>
+						</li>
+						<li class="total">
+							<a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
+							<span class="float-right"><strong>Total</strong>: $180.00</span>
+						</li>
+					</ul>
+				</li>
+			</div>
+		</nav>
+	</header>
+	<div class="all-title-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>Đăng nhập</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cart-box-main">
+		<div class="container">
+
+			<div class="row new-account-login">
+				<div class="mx-auto w-50">
+					<div class="title-left">
+						<h3>Đăng nhập tài khoản
+						</h3>
+					</div>
+					<form id="formLogin" th:action="@{/login}" th:method="POST">
+
+
+						<div class="form-row mb-3">
+							<label for="username" class="mb-0">Địa chỉ email</label>
+							<input id="username" type="email" class="form-control" placeholder="Nhập email"
+								name="username">
+							<label for="password" class="mb-0 mt-2">Mật khẩu</label>
+							<input type="password" class="form-control" id="password" placeholder="Mật khẩu"
+								name="password">
+						</div>
+						<div class="mb-3">
+							<a class="text-warning">Quên mật khẩu ?</a>
+						</div>
+						<div class="mb-3">
+							<button type="submit" class="btn hvr-hover">Đăng nhập</button>
+						</div>
+						<div>
+							<div class="form-text my-3">
+								<span>Bạn chưa có tài khoản?</span> <a class="text-success" href="register.html"></a>
+							</div>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Cart -->
+
+	<!-- Start Instagram Feed  -->
+	<div class="instagram-box">
+		<div class="main-instagram owl-carousel owl-theme">
+			<div class="item">
+				<div class="ins-inner-box">
+					<img src="images/instagram-img-01.jpg" alt="" />
+					<div class="hov-in">
+						<a href="#"><i class="fab fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ins-inner-box">
+					<img src="images/instagram-img-02.jpg" alt="" />
+					<div class="hov-in">
+						<a href="#"><i class="fab fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ins-inner-box">
+					<img src="images/instagram-img-03.jpg" alt="" />
+					<div class="hov-in">
+						<a href="#"><i class="fab fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ins-inner-box">
+					<img src="images/instagram-img-04.jpg" alt="" />
+					<div class="hov-in">
+						<a href="#"><i class="fab fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ins-inner-box">
+					<img src="images/instagram-img-05.jpg" alt="" />
+					<div class="hov-in">
+						<a href="#"><i class="fab fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ins-inner-box">
+					<img src="images/instagram-img-06.jpg" alt="" />
+					<div class="hov-in">
+						<a href="#"><i class="fab fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ins-inner-box">
+					<img src="images/instagram-img-07.jpg" alt="" />
+					<div class="hov-in">
+						<a href="#"><i class="fab fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ins-inner-box">
+					<img src="images/instagram-img-08.jpg" alt="" />
+					<div class="hov-in">
+						<a href="#"><i class="fab fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ins-inner-box">
+					<img src="images/instagram-img-09.jpg" alt="" />
+					<div class="hov-in">
+						<a href="#"><i class="fab fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ins-inner-box">
+					<img src="images/instagram-img-05.jpg" alt="" />
+					<div class="hov-in">
+						<a href="#"><i class="fab fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="footer-main">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Business</h3>
+							<ul class="list-time">
+								<li>Time 1</li>
+								<li>Time 2</li>
+								<li>Time 3</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>News</h3>
+							<form class="newsletter-box">
+								<div class="form-group">
+									<input class="" type="email" name="Email" placeholder="Email" />
+									<i class="fa fa-envelope"></i>
+								</div>
+								<button class="btn hvr-hover" type="submit">Submit</button>
+							</form>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Social</h3>
+							<p>Description of social media.</p>
+							<ul>
+								<li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-widget">
+							<h4>About</h4>
+							<p>About 1</p>
+							<p>About 2</p>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-link">
+							<h4>Information</h4>
+							<ul>
+								<li><a href="#">Home</a></li>
+								<li><a href="#">About</a></li>
+								<li><a href="#">Shop</a></li>
+								<li><a href="#">Info 1</a></li>
+								<li><a href="#">Info 2</a></li>
+								<li><a href="#">Info 3</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-link-contact">
+							<h4>Contact Us</h4>
+							<ul>
+								<li>
+									<p><i class="fas fa-map-marker-alt"></i>Address Line 1<br>Address Line 2<br>Address
+										Line 3</p>
+								</li>
+								<li>
+									<p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+84-8885522">+84-888 555
+											22</a></p>
+								</li>
+								<li>
+									<p><i class="fas fa-envelope"></i>Email: <a
+											href="mailto:freshshop@gmail.com">freshshop@gmail.com</a></p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+	<link rel="shortcut icon" th:href="../images/favicon.ico" type="image/x-icon">
+	<script src="/templates/js/jquery-3.2.1.min.js"></script>
+	<script src="/templates/js/popper.min.js"></script>
+	<script src="/templates/js/bootstrap.min.js"></script>
+	<!-- ALL PLUGINS -->
+	<script src="/templates/js/jquery.superslides.min.js"></script>
+	<script src="/templates/js/bootstrap-select.js"></script>
+	<script src="/templates/js/inewsticker.js"></script>
+	<script src="/templates/js/bootsnav.js"></script>
+	<script src="/templates/js/images-loded.min.js"></script>
+	<script src="/templates/js/isotope.min.js"></script>
+	<script src="/templates/js/owl.carousel.min.js"></script>
+	<script src="/templates/js/baguetteBox.min.js"></script>
+	<script src="/templates/js/form-validator.min.js"></script>
+	<script src="/templates/js/contact-form-script.js"></script>
+	<script src="/templates/js/custom.js"></script>
+
+
+	<!--  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+	<script>
+
+		let currentURL = window.location.href;
+		let hasShop = currentURL.includes('shop');
+		let hasDisplay = currentURL.includes('displayDetail');
+		let hasLangEn = currentURL.includes('&&lang=en');
+		let hasLangVi = currentURL.includes('&&lang=vi');
+		let englishLink = document.getElementById('englishLink');
+		let vietnameseLink = document.getElementById('vietnameseLink');
+		if (hasDisplay || hasShop) {
+			if (hasLangEn || hasLangVi) {
+				if (hasLangEn) {
+					englishLink.setAttribute("href", currentURL);
+					var vnLink = currentURL.replace("&&lang=en", "&&lang=vi");
+					vietnameseLink.setAttribute("href", vnLink);
+				}
+				if (hasLangVi) {
+					vietnameseLink.setAttribute("href", currentURL);
+					var enLink = currentURL.replace("&&lang=vi", "&&lang=en");
+					englishLink.setAttribute("href", enLink);
+				}
+			} else {
+				let newURLEnglish = currentURL + '&&lang=en';
+				englishLink.setAttribute("href", newURLEnglish);
+				let newURLVietnamese = currentURL + '&&lang=vi';
+				vietnameseLink.setAttribute("href", newURLVietnamese);
+			}
+
+		}
+
+	</script>
+
+</body>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+	var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+	(function () {
+		var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+		s1.async = true;
+		s1.src = 'https://embed.tawk.to/65f1537a8d261e1b5f6d18de/1horas620';
+		s1.charset = 'UTF-8';
+		s1.setAttribute('crossorigin', '*');
+		s0.parentNode.insertBefore(s1, s0);
+	})();
+</script>
+<!--End of Tawk.to Script-->
+
+
+</html>

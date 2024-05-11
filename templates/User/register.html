@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+	<link rel="stylesheet" href="/templates/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/templates/css/style.css">
+	<link rel="stylesheet" href="/templates/css/responsive.css">
+	<title>Fresh Shop</title>
+	<link rel="stylesheet" href="/templates/css/custom.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style type="text/css">
+		.form-group {
+			margin-bottom: 20px;
+		}
+
+		#sortSelect {
+			width: 200px;
+		}
+	</style>
+</head>
+
+<body>
+	<header class="main-header">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+						aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+						<i class="fa fa-bars"></i>
+					</button>
+					<a class="navbar-brand" href="index.html"><img src="/templates/images/logo.png" class="logo"
+							alt=""></a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-menu">
+					<ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+						<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+						<li class="nav-item"><a class="nav-link" href="shop.html">Shop</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="nav-link dropdown-toggle arrow">Language</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item">
+									<img class="flag-icon img-fluid me-2" style="width:20px; height:20px"
+										src="../images/us-flag.png" alt="US Flag">
+									English
+								</a>
+								<a class="dropdown-item">
+									<img class="flag-icon img-fluid" src="../images/vn-flag.png"
+										style="width:20px; height:20px" alt="Vietnamese Flag">
+									Tiếng Việt
+								</a>
+							</div>
+						</li>
+
+						<li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
+
+						<li class="dropdown">
+							<a class="nav-link dropdown-toggle arrow" href="#"><i
+									class="fa-sharp fa-solid fa-users"></i></a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="login.html">Login</a>
+								<a class="dropdown-item" href="register.html">Register</a>
+							</div>
+						</li>
+
+						<li class="dropdown">
+							<a href="#" class="nav-link dropdown-toggle arrow">
+								<span>Greeting, </span><span></span>
+							</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="profile.html">Profile</a>
+								<a class="dropdown-item" href="checkout.html">Checkout</a>
+								<a class="dropdown-item" href="">History</a>
+								<a class="dropdown-item" href="">Logout</a>
+							</div>
+						</li>
+						<a href="cart.html" class="nav-link">
+							<i class="fa fa-shopping-bag" style="font-size:20px;"></i>
+							<span class="badge" style="position:relative; top:-10px; color:red; font-size:14px;"
+								id="itemInCart"></span>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div class="side">
+				<a href="#" class="close-side"><i class="fa fa-times"></i></a>
+				<li class="cart-box">
+					<ul class="cart-list">
+						<li>
+							<a href="#" class="photo">
+								<img src="../images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+							<h6><a href="#">Delica omtantur</a></h6>
+							<p>1x - <span class="price">$80.00</span></p>
+						</li>
+						<li>
+							<a href="#" class="photo"><img src="../images/img-pro-02.jpg" class="cart-thumb"
+									alt="" /></a>
+							<h6><a href="#">Omnes ocurreret</a></h6>
+							<p>1x - <span class="price">$60.00</span></p>
+						</li>
+						<li>
+							<a href="#" class="photo"><img src="../images/img-pro-03.jpg" class="cart-thumb"
+									alt="" /></a>
+							<h6><a href="#">Agam facilisis</a></h6>
+							<p>1x - <span class="price">$40.00</span></p>
+						</li>
+						<li class="total">
+							<a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
+							<span class="float-right"><strong>Total</strong>: $180.00</span>
+						</li>
+					</ul>
+				</li>
+			</div>
+		</nav>
+	</header>
+	<div class="top-search">
+		<div class="container">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-search"></i></span>
+				<input type="text" class="form-control" placeholder="Search">
+				<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+			</div>
+		</div>
+	</div>
+	<div class="all-title-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>Đăng kí tài khoản</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cart-box-main">
+		<div class="container">
+			<div class="row new-account-login">
+				<div class="mx-auto mb-3 w-50">
+					<div class="title-left">
+						<h3>Đăng kí tài khoản</h3>
+					</div>
+					<form id="formRegister" th:action="@{/register}" th:method="POST" th:object="${customer}">
+						<div class="form-row mb-3 flex-column">
+							<div class="mb-2">
+								<label for="InputName" class="mb-0">Full Name</label>
+								<input type="text" class="form-control" name="customerName" id="InputName" />
+							</div>
+
+							<div class="mb-2">
+								<label for="InputLastname" class="mb-0">Phone Number</label>
+								<input type="text" class="form-control" name="phoneNumber" id="InputLastname">
+							</div>
+
+							<div class="mb-2">
+								<label for="InputEmail1" class="mb-0">Email Address</label>
+								<input type="email" class="form-control" name="email" id="InputEmail1" />
+							</div>
+
+							<div class="mb-2">
+								<label for="InputEmail2" class="mb-0">Confirm Email Address</label>
+								<input type="email" class="form-control" name="confirmEmail">
+							</div>
+
+							<div class="mb-2">
+								<label for="password" class="mb-0">Password</label>
+								<input type="password" class="form-control" name="pwd" id="password">
+
+
+
+							</div>
+
+							<div class="mb-2">
+								<label for="confirmPwd" class="mb-0">Confirm Password</label> <input type="password"
+									class="form-control" name="confirmPwd" id="confirmPwd" />
+
+
+							</div>
+						</div>
+						<button type="submit" class="btn hvr-hover">Đăng kí</button>
+						<div>
+							<div class="form-text my-3">
+								<span>Đã có tài khoản</span> <a class="text-success" href="login.html"></a>
+							</div>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div th:replace="~{User/fragment/footer.html :: footer}"></div>
+
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+	<th:block th:replace="~{User/Style/template-scr:: html}"></th:block>
+
+</body>
+
+</html>
